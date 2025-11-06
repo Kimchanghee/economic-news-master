@@ -1,5 +1,5 @@
 import { LogIn } from "lucide-react";
-import { LanguagePicker } from "./LanguagePicker";
+import { LanguagePicker } from "@/ui/components/common/LanguagePicker";
 
 type HeaderProps = {
   language: string;
