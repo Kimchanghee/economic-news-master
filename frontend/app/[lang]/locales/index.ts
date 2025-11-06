@@ -41,7 +41,7 @@ export type LocaleKey = keyof typeof localeContent;
 
 export function getLocaleContent(lang?: string): LocaleContent {
   if (lang && lang in localeContent) {
-    return localeContent[lang];
+    return localeContent[lang as LocaleKey];
   }
   return localeContent.en;
 }
