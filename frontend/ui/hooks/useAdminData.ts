@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
-import { API_BASE, fetcher, fetchWithToken } from "@/app/utils/api";
-import type { DashboardResponse, AdminNewsResponse } from "@/app/types/admin";
+import { API_BASE, fetcher, fetchWithToken } from "@/ui/utils/api";
+import type { DashboardResponse, AdminNewsResponse } from "@/ui/types/admin";
 
 export function useAdminData(token: string | null) {
   const dashboardKey = token ? `${API_BASE}/admin/dashboard` : null;

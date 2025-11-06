@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { API_BASE } from "@/app/utils/api";
+import { API_BASE } from "@/ui/utils/api";
 
 export function useAdminAuth() {
   const [token, setToken] = useState<string | null>(null);

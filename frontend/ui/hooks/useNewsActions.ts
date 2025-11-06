@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE } from "@/app/utils/api";
+import { API_BASE } from "@/ui/utils/api";
 
 export function useNewsActions(mutate: () => void) {
   const handleLike = async (id: string) => {

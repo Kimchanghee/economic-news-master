@@ -16,7 +16,8 @@
     "incremental": true,
     "types": ["node"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./app/*"],
+      "@/ui/*": ["./ui/*"]
     },
     "plugins": [
       {

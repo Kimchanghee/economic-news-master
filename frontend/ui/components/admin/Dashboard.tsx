@@ -5,7 +5,7 @@ import { DashboardHeader } from "./DashboardHeader";
 import { TabButton } from "./TabButton";
 import { DashboardTab } from "./DashboardTab";
 import { NewsTab } from "./NewsTab";
-import { useAdminData } from "@/app/hooks/useAdminData";
+import { useAdminData } from "@/ui/hooks/useAdminData";
 
 type DashboardProps = {
   token: string;

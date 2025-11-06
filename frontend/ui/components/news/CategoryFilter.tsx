@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { CATEGORIES } from "@/app/constants/categories";
+import { CATEGORIES } from "@/ui/constants/categories";
 
 type CategoryFilterProps = {
   active: string;

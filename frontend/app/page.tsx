@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Header } from "./components/ui/Header";
-import { Footer } from "./components/ui/Footer";
-import { CategoryFilter } from "./components/ui/CategoryFilter";
-import { LoadingSpinner } from "./components/ui/LoadingSpinner";
-import { EmptyNewsMessage } from "./components/ui/EmptyNewsMessage";
-import { NewsGrid } from "./components/ui/NewsGrid";
-import { PageSection } from "./components/ui/PageSection";
-import { useNewsData } from "./hooks/useNewsData";
-import { useNewsActions } from "./hooks/useNewsActions";
+import { Header } from "@/ui/components/common/Header";
+import { Footer } from "@/ui/components/common/Footer";
+import { CategoryFilter } from "@/ui/components/news/CategoryFilter";
+import { LoadingSpinner } from "@/ui/components/common/LoadingSpinner";
+import { EmptyNewsMessage } from "@/ui/components/news/EmptyNewsMessage";
+import { NewsGrid } from "@/ui/components/news/NewsGrid";
+import { PageSection } from "@/ui/components/common/PageSection";
+import { useNewsData } from "@/ui/hooks/useNewsData";
+import { useNewsActions } from "@/ui/hooks/useNewsActions";
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");

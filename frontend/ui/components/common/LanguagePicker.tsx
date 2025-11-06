@@ -1,5 +1,5 @@
 import { Languages } from "lucide-react";
-import { LANG_LABELS } from "@/app/constants/languages";
+import { LANG_LABELS } from "@/ui/constants/languages";
 
 type LanguagePickerProps = {
   value: string;

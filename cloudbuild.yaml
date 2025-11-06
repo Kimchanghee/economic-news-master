@@ -120,7 +120,7 @@ steps:
       - '--port'
       - '8000'
       - '--memory'
-      - '1Gi'
+      - '2Gi'
       - '--cpu'
       - '2'
       - '--min-instances'
@@ -130,6 +130,9 @@ steps:
       - '--timeout'
       - '300'
       - '--cpu-boost'
+      - '--no-cpu-throttling'
+      - '--set-env-vars'
+      - 'PORT=8000,ENVIRONMENT=production'
     waitFor: ['push-backend']
 
 # Store images in Container Registry

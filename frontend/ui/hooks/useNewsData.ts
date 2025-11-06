@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import useSWR from "swr";
-import { API_BASE, fetcher } from "@/app/utils/api";
-import type { NewsResponse } from "@/app/types/news";
+import { API_BASE, fetcher } from "@/ui/utils/api";
+import type { NewsResponse } from "@/ui/types/news";
 
 export function useNewsData(activeCategory: string, language: string) {
   const query = useMemo(() => {

@@ -1,8 +1,8 @@
 "use client";
 
-import { LoginForm } from "../components/admin/LoginForm";
-import { Dashboard } from "../components/admin/Dashboard";
-import { useAdminAuth } from "../hooks/useAdminAuth";
+import { LoginForm } from "@/ui/components/admin/LoginForm";
+import { Dashboard } from "@/ui/components/admin/Dashboard";
+import { useAdminAuth } from "@/ui/hooks/useAdminAuth";
 
 export default function AdminPage() {
   const { token, view, handleLogin, handleLogout } = useAdminAuth();
