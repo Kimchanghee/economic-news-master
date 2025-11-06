@@ -13,6 +13,11 @@ import ru from "./ru";
 import th from "./th";
 import vi from "./vi";
 import zh from "./zh";
+import nl from "./nl";
+import sv from "./sv";
+import pl from "./pl";
+import tr from "./tr";
+import el from "./el";
 import { LocaleContent } from "./types";
 
 const localeContent = {
@@ -31,6 +36,11 @@ const localeContent = {
   id,
   vi,
   th,
+  nl,
+  sv,
+  pl,
+  tr,
+  el,
 } satisfies Record<string, LocaleContent>;
 
 export const LOCALE_CONTENT = localeContent;

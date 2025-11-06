@@ -6,5 +6,18 @@ export const LANG_LABELS: Record<string, string> = {
   es: "Español",
   fr: "Français",
   de: "Deutsch",
+  it: "Italiano",
+  pt: "Português",
+  ru: "Русский",
+  ar: "العربية",
+  hi: "हिन्दी",
+  id: "Bahasa Indonesia",
+  vi: "Tiếng Việt",
+  th: "ไทย",
+  nl: "Nederlands",
+  sv: "Svenska",
+  pl: "Polski",
+  tr: "Türkçe",
+  el: "Ελληνικά",
 };
 
