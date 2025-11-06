@@ -129,7 +129,7 @@ steps:
       - '10'
       - '--timeout'
       - '300'
-      - '--startup-cpu-boost'
+      - '--cpu-boost'
     waitFor: ['push-backend']
 
 # Store images in Container Registry
