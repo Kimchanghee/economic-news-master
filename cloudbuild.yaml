@@ -5,14 +5,14 @@ steps:
     args:
       - 'build'
       - '-f'
-      - './frontend/Dockerfile'
+      - 'frontend/Dockerfile'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-frontend:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-frontend:latest'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-frontend:$BRANCH_NAME'
-      - './frontend'
+      - 'frontend'
     waitFor: ['-']
 
   # Build Backend Image
@@ -21,14 +21,14 @@ steps:
     args:
       - 'build'
       - '-f'
-      - './backend/Dockerfile'
+      - 'backend/Dockerfile'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-backend:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-backend:latest'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-backend:$BRANCH_NAME'
-      - './backend'
+      - 'backend'
     waitFor: ['-']
 
   # Push Frontend Image
