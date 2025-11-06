@@ -22,11 +22,12 @@ COPY . .
 
 # Create non-root user
 RUN useradd -m -u 1001 appuser && \
-    chown -R appuser:appuser /app
+    chown -R appuser:appuser /app && \
+    chmod +x /app/start.sh
 
 USER appuser
 
 EXPOSE 8000
 
 # Use PORT environment variable provided by Cloud Run
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["/bin/sh", "/app/start.sh"]
