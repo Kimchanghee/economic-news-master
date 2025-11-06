@@ -122,13 +122,14 @@ steps:
       - '--memory'
       - '1Gi'
       - '--cpu'
-      - '1'
+      - '2'
       - '--min-instances'
       - '0'
       - '--max-instances'
       - '10'
       - '--timeout'
       - '300'
+      - '--startup-cpu-boost'
     waitFor: ['push-backend']
 
 # Store images in Container Registry
