@@ -1,5 +1,5 @@
 import { NewsCard } from "./NewsCard";
-import type { NewsItem } from "@/app/types/news";
+import type { NewsItem } from "@/ui/types/news";
 
 type NewsGridProps = {
   items: NewsItem[];
