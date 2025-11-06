@@ -22,12 +22,11 @@ COPY . .
 
 # Create non-root user
 RUN useradd -m -u 1001 appuser && \
-    chown -R appuser:appuser /app && \
-    chmod +x /app/start.sh
+    chown -R appuser:appuser /app
 
 USER appuser
 
 EXPOSE 8000
 
 # Use PORT environment variable provided by Cloud Run
-CMD ["/bin/sh", "/app/start.sh"]
+CMD ["python", "server.py"]
