@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a Question
+    url: https://github.com/yourusername/NEWS/discussions/new?category=q-a
+    about: Ask questions and discuss with the community
+  - name: Discussions
+    url: https://github.com/yourusername/NEWS/discussions
+    about: Share ideas and discuss features
+  - name: Documentation
+    url: https://github.com/yourusername/NEWS/blob/main/README.md
+    about: Read the documentation
