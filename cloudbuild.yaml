@@ -4,6 +4,8 @@ steps:
     id: 'build-frontend'
     args:
       - 'build'
+      - '-f'
+      - './frontend/Dockerfile'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-frontend:$COMMIT_SHA'
       - '-t'
@@ -18,6 +20,8 @@ steps:
     id: 'build-backend'
     args:
       - 'build'
+      - '-f'
+      - './backend/Dockerfile'
       - '-t'
       - 'gcr.io/$PROJECT_ID/economic-news-backend:$COMMIT_SHA'
       - '-t'
