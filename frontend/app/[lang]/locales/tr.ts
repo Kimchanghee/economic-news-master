@@ -1,74 +1,67 @@
 import { LocaleContent } from "./types";
 
 const tr: LocaleContent = {
-  metaTitle: "Ekonomik Haber Toplayıcı | Gerçek Zamanlı Küresel Piyasa İstihbaratı",
-  metaDescription:
-    "Küresel piyasa, kripto, ekonomi, teknoloji, iş ve döviz başlıklarını gerçek zamanlı olarak takip edin. EconNews çok dilli özetler, akıllı filtreler ve eylem dashboardları sunar.",
-  keywords: [
-    "ekonomik haberler",
-    "finans başlıkları",
-    "küresel piyasalar",
-    "kripto haberleri",
-    "döviz güncellemeleri",
-    "ekonomik dashboard",
-    "answer engine optimization",
-    "SEO finans",
-  ],
-  locale: "tr_TR",
-  heroTitle: "Yüksek Hızlı Piyasa Ekipleri için Ekonomik Haber Toplayıcı",
-  heroSubtitle:
-    "Seçilmiş yayınlar, AI özetleri ve güvenebileceğiniz çok dilli kapsama ile piyasaların önünde kalın.",
-  ctaLabel: "Canlı dashboard'u keşfedin",
-  valuePropsTitle: "EconNews neden yetkili yanıtlar sunar",
-  sections: [
-    {
-      title: "Answer Engine Optimization (AEO) için Yapılandırıldı",
-      body:
-        "Her güncellemeyi öz özetler, meta veriler ve SSS işaretlemesi ile yapılandırıyoruz, böylece yanıt motorları ve ses asistanları EconNews'u ilk gösteriyor.",
-      bullets: [
-        "Anında kavrama için AI destekli özet",
-        "Her hikayede kategori, duygu ve dil etiketleri",
-        "Zengin sonuçlar için temel gerçekleri vurgulayan yapılandırılmış veri",
-      ],
-    },
-    {
-      title: "Tek Tıkla Çok Dilli Zeka",
-      body: "Bağlam veya tonu kaybetmeden küresel paydaşları bilgilendirmek için yirmi desteklenen dil arasında geçiş yapın.",
-      bullets: [
-        "Amerika, EMEA ve APAC'ta yerelleştirilmiş deneyimler",
-        "Pazarlar arası karşılaştırma için tutarlı taksonomi",
-        "Yerelleştirilmiş CTA'lar ve destek kaynakları",
-      ],
-    },
-    {
-      title: "İş Akışınız için Hazır",
-      body:
-        "Firehose API, yönetici dashboard'u ve otomatik toplama işleri, araştırma ve iletişim ekiplerinin olayları izlemesini kolaylaştırır.",
-      bullets: [
-        "Denetim günlükleriyle manuel veya zamanlanmış RSS alımı",
-        "İlgili hikayeleri öne çıkarmak için etkileşim metrikleri (görüntüleme ve beğeni)",
-        "Aşağı akış analitiği için dışa aktarmaya hazır JSON",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "EconNews finansal başlıkları ne sıklıkla yeniler?",
-      answer:
-        "Yayınlar, planınıza göre saatlik özetlerden dakika dakika takibe ölçeklenebilmeniz için toplu kontrollerle sürekli güncellenir.",
-    },
-    {
-      question: "Hangi kategoriler izleniyor?",
-      answer:
-        "Hisse senetleri, kripto, makroekonomi, teknoloji, kurumsal güncellemeler ve döviz borsasını kapsıyoruz, her sektör için özel filtrelerle.",
-    },
-    {
-      question: "EconNews'u dahili araçlarımızla entegre edebilir miyim?",
-      answer:
-        "Evet. FastAPI arka ucu, haber alma, etkileşim sinyalleri ve toplama tetikleyicileri için kimlik doğrulama uç noktaları sunar.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Küresel Ekonomi Haberleri | 20 Dilde Gerçek Zamanlı Piyasa İstihbaratı",
+    "metaDescription": "EconNews, 20 dilde yerelleştirilmiş pazar özetleri, yapılandırılmış veriler ve sesli aramaya hazır yanıtlar sunar. Hreflang ve yerleşik şema ile hisse senetleri, kripto, makroekonomi, teknoloji, kurumsal ve forex başlıklarını takip edin.",
+    "keywords": [
+      "küresel ekonomi haberleri",
+      "çok dilli pazar öngörüleri",
+      "finans sesli arama cevapları",
+      "uluslararası SEO kontrol paneli",
+      "cevap motoru optimizasyonu"
+    ],
+    "locale": "tr_TR"
+  },
+  "aeo": {
+    "heroTitle": "Küresel Ekipler için Yanıt Motoru Optimize Edilmiş Ekonomik Haberler",
+    "heroSubtitle": "20 yerel ayarda öne çıkan yanıtlar kazanmak için derlenmiş yayınları, sesli aramaya hazır SSS'leri ve yapılandırılmış meta verileri birleştirin.",
+    "ctaLabel": "Canlı piyasa kontrol panelini açın",
+    "valuePropsTitle": "EconNews neden öne çıkan yanıtları kazanıyor?",
+    "sections": [
+      {
+        "title": "Tasarıma Göre Ses ve Cevap Motoru Optimizasyonu",
+        "body": "Her hikaye konuşma özetleri, SSS şeması ve JSON-LD bloklarıyla birlikte gelir; böylece yanıt motorları, sesli asistanlar ve yapay zeka genel bakışları öncelikle brifinglerinizi vurgular.",
+        "bullets": [
+          "Sesli sonuçlar için oluşturulmuş, konuşmaya dayalı, amaca uygun özetler",
+          "Varlık, sektör ve duyarlılık etiketlemesi schema.org ile uyumlu hale getirildi",
+          "Öne çıkan parçacıkları yakalamak için otomatik SSS ve Nasıl Yapılır işaretlemesi"
+        ]
+      },
+      {
+        "title": "20 Dilde Yerelleştirilmiş Zeka",
+        "body": "Yerelleştirilmiş başlıklar, hreflang haritalaması ve anahtar kelime araştırması, sınır ötesi paydaşların ince ayrıntıları kaybetmeden bilgi sahibi olmasını sağlar.",
+        "bullets": [
+          "Yerel ayara göre kültürel açıdan alakalı anahtar kelimeler ve CTA'lar",
+          "Dünya çapındaki pazarları karşılaştırmak için tutarlı sınıflandırma",
+          "Bölgeye özel destek ve uyumluluk mesajları"
+        ]
+      },
+      {
+        "title": "İş Akışı Otomasyonu ve Yönetişim",
+        "body": "Kimliği doğrulanmış API'ler, yönetici onayları ve şeffaf alım günlükleriyle EconNews'i yığınınıza entegre edin.",
+        "bullets": [
+          "Değerlendirme listesi düzeyindeki kontrollerle koleksiyonları planlayın veya tetikleyin",
+          "Etkileşim ölçümleri, güçlendirilmeye değer hikayeleri ortaya çıkarıyor",
+          "JSON dışa aktarımları iş zekasına ve risk kontrol panellerine eklenir"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "EconNews finansal özetleri cevap motorları için nasıl optimize edilmiş halde tutuyor?",
+        "answer": "Her güncellemeyi konuşma dili, schema.org işaretlemesi ve yerelleştirilmiş anahtar kelimelerle yapılandırıyoruz, böylece sesli asistanlar ve yapay zeka özetleri doğru yanıtı saniyeler içinde ortaya çıkarıyor."
+      },
+      {
+        "question": "EconNews günlük olarak hangi piyasaları ve varlık sınıflarını izliyor?",
+        "answer": "Her bölgeye özel filtrelerle hisse senetlerini, kripto paraları, makroekonomik göstergeleri, teknolojiyi, kurumsal gelişmeleri ve forex'i takip edin."
+      },
+      {
+        "question": "EconNews mevcut araştırma veya haber odası araçlarımızla entegre olabilir mi?",
+        "answer": "Evet. Güvenli FastAPI uç noktaları, haberleri, etkileşim sinyallerini ve otomasyon tetikleyicilerini doğrudan iş akışınıza getirmenize olanak tanır."
+      }
+    ]
+  }
 };
 
 export default tr;
-

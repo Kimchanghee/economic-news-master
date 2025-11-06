@@ -1,74 +1,67 @@
 import { LocaleContent } from "./types";
 
 const pl: LocaleContent = {
-  metaTitle: "Agregator Wiadomości Ekonomicznych | Globalny Wywiad Rynkowy w Czasie Rzeczywistym",
-  metaDescription:
-    "Śledź globalne nagłówki rynkowe, krypto, gospodarcze, technologiczne, biznesowe i walutowe w czasie rzeczywistym. EconNews dostarcza wielojęzyczne podsumowania, inteligentne filtry i dashboardy.",
-  keywords: [
-    "wiadomości ekonomiczne",
-    "nagłówki finansowe",
-    "rynki globalne",
-    "wiadomości krypto",
-    "aktualizacje forex",
-    "dashboard ekonomiczny",
-    "answer engine optimization",
-    "SEO finanse",
-  ],
-  locale: "pl_PL",
-  heroTitle: "Agregator Wiadomości Ekonomicznych dla Zespołów Szybkich Rynków",
-  heroSubtitle:
-    "Wyprzedź rynki dzięki wyselekcjonowanym kanałom, podsumowaniom AI i wielojęzycznej relacji, której możesz zaufać.",
-  ctaLabel: "Eksploruj dashboard na żywo",
-  valuePropsTitle: "Dlaczego EconNews dostarcza autorytatywne odpowiedzi",
-  sections: [
-    {
-      title: "Zbudowany dla Answer Engine Optimization (AEO)",
-      body:
-        "Strukturyzujemy każdą aktualizację ze zwięzłymi podsumowaniami, metadanymi i znacznikami FAQ, aby silniki odpowiedzi i asystenci głosowi wyświetlali EconNews jako pierwsze.",
-      bullets: [
-        "Streszczenie wspomagane AI dla natychmiastowego zrozumienia",
-        "Tagi kategorii, sentymentu i języka w każdej historii",
-        "Dane strukturalne podkreślające kluczowe fakty dla bogatych wyników",
-      ],
-    },
-    {
-      title: "Wielojęzyczna Inteligencja w Jednym Kliknięciu",
-      body: "Przełączaj między dwudziestoma obsługiwanymi językami, aby informować globalnych interesariuszy bez utraty kontekstu czy tonu.",
-      bullets: [
-        "Zlokalizowane doświadczenia w Ameryce, EMEA i APAC",
-        "Spójna taksonomia do porównań międzyrynkowych",
-        "Zlokalizowane CTA i zasoby wsparcia",
-      ],
-    },
-    {
-      title: "Gotowy na Twój Przepływ Pracy",
-      body:
-        "Firehose API, dashboard administratora i zautomatyzowane zadania zbierania usprawniają sposób, w jaki zespoły badawcze i komunikacyjne monitorują wydarzenia.",
-      bullets: [
-        "Ręczne lub zaplanowane pobieranie RSS z dziennikami audytu",
-        "Metryki zaangażowania (wyświetlenia i polubienia) do wyświetlania istotnych historii",
-        "Gotowy do eksportu JSON dla dalszej analizy",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "Jak często EconNews odświeża nagłówki finansowe?",
-      answer:
-        "Kanały aktualizują się nieprzerwanie z kontrolą wsadową, dzięki czemu możesz skalować od godzinnych streszczeń do śledzenia minutowego.",
-    },
-    {
-      question: "Jakie kategorie są monitorowane?",
-      answer:
-        "Obejmujemy akcje, krypto, makroekonomię, technologię, aktualizacje korporacyjne i wymianę walut, z niestandardowymi filtrami dla każdego sektora.",
-    },
-    {
-      question: "Czy mogę zintegrować EconNews z naszymi wewnętrznymi narzędziami?",
-      answer:
-        "Tak. Backend FastAPI udostępnia uwierzytelnione endpointy do pobierania wiadomości, sygnałów zaangażowania i wyzwalaczy zbierania.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Globalne wiadomości gospodarcze | Analiza rynku w czasie rzeczywistym w 20 językach",
+    "metaDescription": "EconNews dostarcza zlokalizowane informacje rynkowe, dane strukturalne i odpowiedzi gotowe do wyszukiwania głosowego w 20 językach. Śledź nagłówki giełdowe, kryptograficzne, makroekonomiczne, technologiczne, korporacyjne i forex za pomocą wbudowanego hreflangu i schematu.",
+    "keywords": [
+      "światowe wiadomości gospodarcze",
+      "wielojęzyczne spostrzeżenia rynkowe",
+      "finansuj odpowiedzi wyszukiwania głosowego",
+      "międzynarodowy panel SEO",
+      "optymalizacja silnika odpowiedzi"
+    ],
+    "locale": "pl_PL"
+  },
+  "aeo": {
+    "heroTitle": "Wiadomości ekonomiczne zoptymalizowane pod kątem silnika odpowiedzi dla zespołów globalnych",
+    "heroSubtitle": "Połącz wybrane kanały, często zadawane pytania z funkcją wyszukiwania głosowego i uporządkowane metadane, aby uzyskać polecane odpowiedzi w 20 lokalizacjach.",
+    "ctaLabel": "Otwórz panel rynku na żywo",
+    "valuePropsTitle": "Dlaczego EconNews wygrywa wyróżnione odpowiedzi",
+    "sections": [
+      {
+        "title": "Optymalizacja głosowa i automatyczna sekretarka już w fazie projektowania",
+        "body": "Każda historia jest dostarczana z podsumowaniami konwersacji, schematem często zadawanych pytań i blokami JSON-LD, dzięki czemu silniki odpowiedzi, asystenci głosowi i przeglądy AI wyróżniają Twoje odprawy w pierwszej kolejności.",
+        "bullets": [
+          "Konwersacyjne, dopasowane do intencji podsumowania opracowane pod kątem wyników głosowych",
+          "Tagowanie jednostek, sektorów i nastrojów dostosowane do schema.org",
+          "Zautomatyzowane często zadawane pytania i znaczniki HowTo do przechwytywania polecanych fragmentów"
+        ]
+      },
+      {
+        "title": "Zlokalizowana inteligencja w 20 językach",
+        "body": "Zlokalizowane nagłówki, mapowanie hreflangów i badanie słów kluczowych informują interesariuszy transgranicznych bez utraty niuansów.",
+        "bullets": [
+          "Odpowiednie kulturowo słowa kluczowe i wezwania do działania według regionu",
+          "Spójna taksonomia do porównywania rynków na całym świecie",
+          "Wsparcie specyficzne dla regionu i komunikaty dotyczące zgodności"
+        ]
+      },
+      {
+        "title": "Automatyzacja i zarządzanie przepływem pracy",
+        "body": "Zintegruj EconNews ze swoim stosem dzięki uwierzytelnionym interfejsom API, zatwierdzeniom administratora i przejrzystym dziennikom przetwarzania.",
+        "bullets": [
+          "Planuj lub uruchamiaj kolekcje za pomocą elementów sterujących na poziomie rubryk",
+          "Wskaźniki zaangażowania ujawniają historie, które warto uwydatnić",
+          "Eksport JSON podłącza się do pulpitów BI i pulpitów nawigacyjnych ryzyka"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "W jaki sposób EconNews optymalizuje sprawozdania finansowe pod kątem silników odpowiedzi?",
+        "answer": "Każdą aktualizację organizujemy za pomocą języka konwersacyjnego, znaczników schema.org i zlokalizowanych słów kluczowych, dzięki czemu asystenci głosowi i podsumowania sztucznej inteligencji wskazują właściwą odpowiedź w ciągu kilku sekund."
+      },
+      {
+        "question": "Jakie rynki i klasy aktywów codziennie monitoruje EconNews?",
+        "answer": "Śledź akcje, kryptowaluty, wskaźniki makroekonomiczne, technologię, rozwój przedsiębiorstw i forex z filtrami dla każdego regionu."
+      },
+      {
+        "question": "Czy EconNews można zintegrować z naszymi istniejącymi narzędziami badawczymi lub newsroomami?",
+        "answer": "Tak. Bezpieczne punkty końcowe FastAPI umożliwiają pobieranie wiadomości, sygnałów zaangażowania i wyzwalaczy automatyzacji bezpośrednio do przepływu pracy."
+      }
+    ]
+  }
 };
 
 export default pl;
-

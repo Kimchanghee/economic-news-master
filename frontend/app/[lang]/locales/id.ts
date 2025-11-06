@@ -1,72 +1,67 @@
 import { LocaleContent } from "./types";
 
 const id: LocaleContent = {
-  metaTitle: "EconNews Agregator Berita Ekonomi | Intelijen Pasar Multibahasa",
-  metaDescription:
-    "Pantau pasar saham, kripto, ekonomi, teknologi, bisnis, dan forex secara real time. Konten dioptimalkan untuk AEO dan SEO dengan ringkasan dalam lima belas bahasa.",
-  keywords: [
-    "berita ekonomi",
-    "pasar global",
-    "berita kripto",
-    "nilai tukar",
-    "dashboard ekonomi",
-    "answer engine optimization",
-  ],
-  locale: "id_ID",
-  heroTitle: "Pusat berita ekonomi real time untuk tim global",
-  heroSubtitle:
-    "Ringkasan AI, data terstruktur, dan lokaliasi lintas wilayah memastikan keputusan cepat dan akurat.",
-  ctaLabel: "Buka dashboard langsung",
-  valuePropsTitle: "Mengapa EconNews unggul",
-  sections: [
-    {
-      title: "Dioptimalkan untuk Answer Engine",
-      body:
-        "FAQ, data terstruktur, dan kata kunci menjadikan EconNews mudah ditemukan di asisten suara dan rich result.",
-      bullets: [
-        "Ringkasan instan untuk setiap artikel",
-        "Tag kategori dan bahasa yang konsisten",
-        "Markup JSON-LD siap pakai",
-      ],
-    },
-    {
-      title: "Dukungan 15 bahasa",
-      body:
-        "Bahasa Indonesia, Inggris, Mandarin, Arab, Hindi, dan lainnya menjaga konteks yang sama bagi semua pemangku kepentingan.",
-      bullets: [
-        "Struktur data seragam untuk perbandingan pasar",
-        "CTA serta dukungan lokal untuk tiap kawasan",
-        "Laporan eksekutif siap didistribusikan",
-      ],
-    },
-    {
-      title: "Integrasi mulus dengan alur kerja",
-      body:
-        "API aman, dashboard admin, dan job otomatis memudahkan tim riset memantau peristiwa penting.",
-      bullets: [
-        "Pengambilan manual atau terjadwal dengan log",
-        "Metrik keterlibatan untuk menentukan prioritas",
-        "Ekspor JSON untuk analitik internal",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "Seberapa sering data diperbarui?",
-      answer:
-        "Sumber RSS dipantau terus-menerus; ukuran batch dan interval dapat disesuaikan sesuai kebutuhan operasi.",
-    },
-    {
-      question: "Kategori apa saja yang tersedia?",
-      answer:
-        "Saham, kripto, ekonomi, teknologi, bisnis, dan forex dengan filter khusus per sektor.",
-    },
-    {
-      question: "Bisakah kami mengintegrasikan EconNews dengan tool internal?",
-      answer:
-        "Bisa. Endpoint FastAPI terautentikasi memungkinkan akses berita, metrik engagement, dan pemicu pengumpulan.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Berita Ekonomi Global | Intelijen Pasar Real-time dalam 20 Bahasa",
+    "metaDescription": "EconNews memberikan ringkasan pasar lokal, data terstruktur, dan jawaban siap pencarian suara dalam 20 bahasa. Lacak berita utama ekuitas, kripto, makroekonomi, teknologi, perusahaan, dan valas dengan hreflang dan skema yang disertakan.",
+    "keywords": [
+      "berita ekonomi global",
+      "wawasan pasar multibahasa",
+      "membiayai jawaban pencarian suara",
+      "dasbor SEO internasional",
+      "jawaban optimasi mesin"
+    ],
+    "locale": "id_ID"
+  },
+  "aeo": {
+    "heroTitle": "Berita Ekonomi yang Dioptimalkan Mesin Penjawab untuk Tim Global",
+    "heroSubtitle": "Gabungkan feed yang dikurasi, FAQ yang siap untuk penelusuran suara, dan metadata terstruktur untuk mendapatkan jawaban unggulan di 20 lokal.",
+    "ctaLabel": "Buka dasbor pasar langsung",
+    "valuePropsTitle": "Mengapa EconNews memenangkan jawaban unggulan",
+    "sections": [
+      {
+        "title": "Optimasi Mesin Suara dan Jawaban berdasarkan Desain",
+        "body": "Setiap cerita dilengkapi dengan ringkasan percakapan, skema FAQ, dan blok JSON-LD sehingga mesin penjawab, asisten suara, dan ikhtisar AI menyoroti ringkasan Anda terlebih dahulu.",
+        "bullets": [
+          "Ringkasan percakapan yang sesuai dengan maksud dan tujuan dibuat untuk hasil suara",
+          "Penandaan entitas, sektor, dan sentimen selaras dengan skema.org",
+          "FAQ otomatis dan markup HowTo untuk menangkap cuplikan unggulan"
+        ]
+      },
+      {
+        "title": "Kecerdasan Lokal dalam 20 Bahasa",
+        "body": "Judul berita yang dilokalkan, pemetaan hreflang, dan penelitian kata kunci terus memberikan informasi kepada pemangku kepentingan lintas negara tanpa kehilangan nuansa.",
+        "bullets": [
+          "Kata kunci dan CTA yang relevan dengan budaya per lokal",
+          "Taksonomi yang konsisten untuk membandingkan pasar di seluruh dunia",
+          "Pesan dukungan dan kepatuhan khusus wilayah"
+        ]
+      },
+      {
+        "title": "Otomatisasi dan Tata Kelola Alur Kerja",
+        "body": "Integrasikan EconNews ke dalam tumpukan Anda dengan API yang diautentikasi, persetujuan admin, dan log penyerapan yang transparan.",
+        "bullets": [
+          "Jadwalkan atau picu koleksi dengan kontrol tingkat rubrik",
+          "Metrik keterlibatan memunculkan cerita yang layak untuk diperkuat",
+          "Ekspor JSON dihubungkan ke BI dan dasbor risiko"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bagaimana EconNews menjaga laporan keuangan tetap optimal untuk mesin penjawab?",
+        "answer": "Kami menyusun setiap pembaruan dengan bahasa percakapan, markup skema.org, dan kata kunci yang dilokalkan sehingga asisten suara dan ringkasan AI memunculkan jawaban yang tepat dalam hitungan detik."
+      },
+      {
+        "question": "Pasar dan kelas aset manakah yang dipantau EconNews setiap hari?",
+        "answer": "Ikuti ekuitas, kripto, indikator makroekonomi, teknologi, perkembangan perusahaan, dan valas dengan filter untuk setiap wilayah."
+      },
+      {
+        "question": "Bisakah EconNews berintegrasi dengan alat penelitian atau redaksi kami yang sudah ada?",
+        "answer": "Ya. Titik akhir FastAPI yang aman memungkinkan Anda mengambil berita, sinyal keterlibatan, dan pemicu otomatisasi langsung ke alur kerja Anda."
+      }
+    ]
+  }
 };
 
 export default id;

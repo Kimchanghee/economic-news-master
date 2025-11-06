@@ -1,74 +1,67 @@
 import { LocaleContent } from "./types";
 
 const nl: LocaleContent = {
-  metaTitle: "Economisch Nieuws Aggregator | Real-time Mondiale Marktintelligentie",
-  metaDescription:
-    "Volg wereldwijde markt-, crypto-, economie-, technologie-, bedrijfs- en forexkoppen in realtime. EconNews levert meertalige samenvattingen, slimme filters en dashboards.",
-  keywords: [
-    "economisch nieuws",
-    "financiële koppen",
-    "wereldmarkten",
-    "crypto nieuws",
-    "forex updates",
-    "economisch dashboard",
-    "answer engine optimization",
-    "SEO financiën",
-  ],
-  locale: "nl_NL",
-  heroTitle: "Economisch Nieuws Aggregator voor Snelle Marktteams",
-  heroSubtitle:
-    "Blijf voorop in de markten met gecureerde feeds, AI-samenvattingen en meertalige dekking die u kunt vertrouwen.",
-  ctaLabel: "Verken het live dashboard",
-  valuePropsTitle: "Waarom EconNews gezaghebbende antwoorden levert",
-  sections: [
-    {
-      title: "Gebouwd voor Answer Engine Optimization (AEO)",
-      body:
-        "We structureren elke update met beknopte samenvattingen, metadata en FAQ-markup zodat antwoordmachines en stemassistenten EconNews als eerste tonen.",
-      bullets: [
-        "AI-ondersteunde samenvatting voor direct begrip",
-        "Categorie-, sentiment- en taaltags in elk verhaal",
-        "Gestructureerde data die kernfeiten benadrukt voor rijke resultaten",
-      ],
-    },
-    {
-      title: "Meertalige Intelligentie in Één Klik",
-      body: "Schakel tussen twintig ondersteunde talen om wereldwijde belanghebbenden te briefen zonder context of toon te verliezen.",
-      bullets: [
-        "Gelokaliseerde ervaringen in Amerika, EMEA en APAC",
-        "Consistente taxonomie voor cross-market vergelijking",
-        "Gelokaliseerde CTA's en ondersteuningsbronnen",
-      ],
-    },
-    {
-      title: "Klaar voor Uw Workflow",
-      body:
-        "Firehose API, admin dashboard en geautomatiseerde verzameljobs stroomlijnen hoe onderzoeks- en communicatieteams gebeurtenissen monitoren.",
-      bullets: [
-        "Handmatige of geplande RSS-inname met auditlogs",
-        "Betrokkenheidsmetrieken (views & likes) om relevante verhalen te tonen",
-        "Export-klare JSON voor downstream analytics",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "Hoe vaak ververst EconNews financiële koppen?",
-      answer:
-        "Feeds worden continu bijgewerkt met batching-controles zodat u kunt schalen van uurdagelijkse samenvattingen tot minuut-tot-minuut tracking.",
-    },
-    {
-      question: "Welke categorieën worden gemonitord?",
-      answer:
-        "We dekken aandelen, crypto, macro-economie, technologie, bedrijfsupdates en valuta-uitwisseling, met aangepaste filters voor elke sector.",
-    },
-    {
-      question: "Kan ik EconNews integreren met onze interne tools?",
-      answer:
-        "Ja. De FastAPI backend biedt geauthenticeerde endpoints voor nieuwsretrieval, betrokkenheidssignalen en verzameltriggers.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Mondiaal economisch nieuws | Realtime marktinformatie in 20 talen",
+    "metaDescription": "EconNews levert gelokaliseerde marktinformatie, gestructureerde gegevens en antwoorden die geschikt zijn voor gesproken zoekopdrachten in 20 talen. Volg de krantenkoppen op het gebied van aandelen, crypto, macro-economie, technologie, bedrijven en forex met ingebakken hreflang en schema.",
+    "keywords": [
+      "mondiaal economisch nieuws",
+      "meertalige marktinzichten",
+      "antwoorden op gesproken zoekopdrachten financieren",
+      "internationaal SEO-dashboard",
+      "antwoord motoroptimalisatie"
+    ],
+    "locale": "nl_NL"
+  },
+  "aeo": {
+    "heroTitle": "Answer Engine geoptimaliseerd economisch nieuws voor mondiale teams",
+    "heroSubtitle": "Combineer samengestelde feeds, veelgestelde vragen die geschikt zijn voor gesproken zoekopdrachten en gestructureerde metadata om uitgelichte antwoorden te krijgen in 20 landen.",
+    "ctaLabel": "Open het live marktdashboard",
+    "valuePropsTitle": "Waarom EconNews aanbevolen antwoorden wint",
+    "sections": [
+      {
+        "title": "Stem- en antwoordengine-optimalisatie door ontwerp",
+        "body": "Elk verhaal wordt geleverd met gesprekssamenvattingen, een FAQ-schema en JSON-LD-blokken, zodat antwoordengines, stemassistenten en AI-overzichten uw briefings als eerste onder de aandacht brengen.",
+        "bullets": [
+          "Conversatiegerichte, op de intentie afgestemde samenvattingen, gebouwd voor stemresultaten",
+          "Entiteits-, sector- en sentimenttagging afgestemd op schema.org",
+          "Geautomatiseerde FAQ en HowTo-opmaak om aanbevolen fragmenten vast te leggen"
+        ]
+      },
+      {
+        "title": "Gelokaliseerde intelligentie in 20 talen",
+        "body": "Gelokaliseerde krantenkoppen, hreflang-mapping en trefwoordonderzoek houden grensoverschrijdende belanghebbenden op de hoogte zonder de nuance te verliezen.",
+        "bullets": [
+          "Cultureel relevante zoekwoorden en CTA's per land",
+          "Consistente taxonomie voor het vergelijken van markten over de hele wereld",
+          "Regiospecifieke ondersteuning en compliance-berichten"
+        ]
+      },
+      {
+        "title": "Workflowautomatisering en -beheer",
+        "body": "Integreer EconNews in uw stack met geverifieerde API's, beheerdersgoedkeuringen en transparante opnamelogboeken.",
+        "bullets": [
+          "Plan of activeer verzamelingen met bedieningselementen op rubriekniveau",
+          "Betrokkenheidsstatistieken brengen verhalen naar voren die de moeite waard zijn om te versterken",
+          "JSON-exports worden aangesloten op BI en risicodashboards"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Hoe houdt EconNews financiële overzichten geoptimaliseerd voor antwoordmotoren?",
+        "answer": "We structureren elke update met conversatietaal, schema.org-opmaak en gelokaliseerde trefwoorden, zodat stemassistenten en AI-samenvattingen binnen enkele seconden het juiste antwoord naar voren brengen."
+      },
+      {
+        "question": "Welke markten en beleggingscategorieën monitort EconNews dagelijks?",
+        "answer": "Volg aandelen, crypto, macro-economische indicatoren, technologie, bedrijfsontwikkelingen en forex met filters voor elke regio."
+      },
+      {
+        "question": "Kan EconNews worden geïntegreerd met onze bestaande onderzoeks- of redactietools?",
+        "answer": "Ja. Met veilige FastAPI-eindpunten kunt u nieuws, betrokkenheidssignalen en automatiseringstriggers rechtstreeks in uw workflow ophalen."
+      }
+    ]
+  }
 };
 
 export default nl;
-

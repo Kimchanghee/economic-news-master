@@ -9,15 +9,23 @@ export type FAQ = {
   answer: string;
 };
 
-export type LocaleContent = {
+export type SeoContent = {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
   locale: string;
+};
+
+export type AeoContent = {
   heroTitle: string;
   heroSubtitle: string;
   ctaLabel: string;
   valuePropsTitle: string;
   sections: Section[];
   faqs: FAQ[];
+};
+
+export type LocaleContent = {
+  seo: SeoContent;
+  aeo: AeoContent;
 };

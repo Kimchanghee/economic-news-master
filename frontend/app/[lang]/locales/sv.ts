@@ -1,74 +1,67 @@
 import { LocaleContent } from "./types";
 
 const sv: LocaleContent = {
-  metaTitle: "Ekonomisk Nyhetsaggregator | Realtid Global Marknadsintelligens",
-  metaDescription:
-    "Spåra globala marknads-, krypto-, ekonomi-, teknik-, affärs- och valutarubriker i realtid. EconNews levererar flerspråkiga sammanfattningar, smarta filter och handlingsbara dashboards.",
-  keywords: [
-    "ekonomiska nyheter",
-    "finansrubriker",
-    "globala marknader",
-    "krypto nyheter",
-    "valutauppdateringar",
-    "ekonomisk dashboard",
-    "answer engine optimization",
-    "SEO finans",
-  ],
-  locale: "sv_SE",
-  heroTitle: "Ekonomisk Nyhetsaggregator för Höghastighetsteam",
-  heroSubtitle:
-    "Håll dig före marknaderna med kurerade flöden, AI-sammanfattningar och flerspråkig täckning du kan lita på.",
-  ctaLabel: "Utforska live dashboarden",
-  valuePropsTitle: "Varför EconNews levererar auktoritativa svar",
-  sections: [
-    {
-      title: "Byggd för Answer Engine Optimization (AEO)",
-      body:
-        "Vi strukturerar varje uppdatering med koncisa sammanfattningar, metadata och FAQ-markup så att svarsmotorer och röstassistenter visar EconNews först.",
-      bullets: [
-        "AI-assisterad synopsis för omedelbar förståelse",
-        "Kategori-, sentiment- och språktaggar i varje berättelse",
-        "Strukturerad data som lyfter fram nyckelfakta för rika resultat",
-      ],
-    },
-    {
-      title: "Flerspråkig Intelligens med Ett Klick",
-      body: "Växla mellan tjugo språk för att informera globala intressenter utan att förlora kontext eller ton.",
-      bullets: [
-        "Lokaliserade upplevelser i Amerika, EMEA och APAC",
-        "Konsekvent taxonomi för jämförelse över marknader",
-        "Lokaliserade CTA:er och supportresurser",
-      ],
-    },
-    {
-      title: "Redo för Ditt Arbetsflöde",
-      body:
-        "Firehose API, admin dashboard och automatiserade insamlingsjobb effektiviserar hur forsknings- och kommunikationsteam övervakar händelser.",
-      bullets: [
-        "Manuell eller schemalagd RSS-inmatning med revisionloggar",
-        "Engagemangsmått (visningar & gillanden) för att lyfta fram relevanta berättelser",
-        "Exportklar JSON för nedströmsanalys",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "Hur ofta uppdaterar EconNews finansiella rubriker?",
-      answer:
-        "Flöden uppdateras kontinuerligt med batchningskontroller så att du kan skala från timdagliga sammanfattningar till minut-för-minut-spårning.",
-    },
-    {
-      question: "Vilka kategorier övervakas?",
-      answer:
-        "Vi täcker aktier, krypto, makroekonomi, teknik, företagsuppdateringar och valutaväxling, med anpassade filter för varje sektor.",
-    },
-    {
-      question: "Kan jag integrera EconNews med våra interna verktyg?",
-      answer:
-        "Ja. FastAPI-backend exponerar autentiserade endpoints för nyhetshämtning, engagemangssignaler och insamlingsutlösare.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Globala ekonomiska nyheter | Marknadsinformation i realtid på 20 språk",
+    "metaDescription": "EconNews levererar lokaliserade marknadsunderlag, strukturerad data och röstsökningsklara svar på 20 språk. Spåra aktier, krypto, makroekonomi, teknik, företag och valutarubriker med hreflang och schema inbakat.",
+    "keywords": [
+      "globala ekonomiska nyheter",
+      "flerspråkiga marknadsinsikter",
+      "finansiera röstsökningssvar",
+      "internationell SEO-instrumentpanel",
+      "svara på motoroptimering"
+    ],
+    "locale": "sv_SE"
+  },
+  "aeo": {
+    "heroTitle": "Svarsmotoroptimerade ekonomiska nyheter för globala team",
+    "heroSubtitle": "Kombinera utvalda flöden, vanliga frågor som är redo för röstsökning och strukturerad metadata för att få utvalda svar på 20 språk.",
+    "ctaLabel": "Öppna instrumentpanelen för livemarknaden",
+    "valuePropsTitle": "Varför EconNews vinner utvalda svar",
+    "sections": [
+      {
+        "title": "Röst- och svarsmotoroptimering genom design",
+        "body": "Varje berättelse levereras med konversationssammanfattningar, FAQ-schema och JSON-LD-block så svarsmotorer, röstassistenter och AI-översikter lyfter fram dina genomgångar först.",
+        "bullets": [
+          "Konversationssammanfattningar med avsiktsmatchning byggda för röstresultat",
+          "Entitets-, sektor- och sentimenttaggning i linje med schema.org",
+          "Automatiserad FAQ och HowTo-uppmärkning för att fånga utvalda utdrag"
+        ]
+      },
+      {
+        "title": "Lokaliserad intelligens på 20 språk",
+        "body": "Lokaliserade rubriker, hreflang-kartläggning och sökordsforskning håller gränsöverskridande intressenter informerade utan att tappa nyanser.",
+        "bullets": [
+          "Kulturellt relevanta sökord och uppmaningar per plats",
+          "Konsekvent taxonomi för att jämföra marknader över hela världen",
+          "Regionspecifik support och efterlevnadsmeddelanden"
+        ]
+      },
+      {
+        "title": "Arbetsflödesautomatisering och styrning",
+        "body": "Integrera EconNews i din stack med autentiserade API:er, administratörsgodkännanden och transparenta inmatningsloggar.",
+        "bullets": [
+          "Schemalägg eller aktivera samlingar med kontroller på rubriknivå",
+          "Engagemangsmått ytberättelser värda att förstärka",
+          "JSON-exporter ansluts till BI och riskinstrumentpaneler"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Hur håller EconNews finansiella briefs optimerade för svarsmotorer?",
+        "answer": "Vi strukturerar varje uppdatering med samtalsspråk, schema.org-uppmärkning och lokaliserade nyckelord så att röstassistenter och AI-sammanfattningar kommer fram till rätt svar på några sekunder."
+      },
+      {
+        "question": "Vilka marknader och tillgångsklasser övervakar EconNews dagligen?",
+        "answer": "Följ aktier, krypto, makroekonomiska indikatorer, teknik, företagsutveckling och valutakurser med filter för varje region."
+      },
+      {
+        "question": "Kan EconNews integreras med våra befintliga forsknings- eller nyhetsverktyg?",
+        "answer": "Ja. Med säkra FastAPI-slutpunkter kan du hämta nyheter, engagemangssignaler och automatiseringsutlösare direkt i ditt arbetsflöde."
+      }
+    ]
+  }
 };
 
 export default sv;
-

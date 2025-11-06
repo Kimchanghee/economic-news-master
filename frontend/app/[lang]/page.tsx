@@ -28,23 +28,24 @@ function getAlternates(current: LocaleKey) {
 export function generateMetadata({ params }: { params: { lang: LocaleKey } }): Metadata {
   const lang = SUPPORTED_LANGS.includes(params.lang) ? params.lang : ("en" as LocaleKey);
   const content = getLocaleContent(lang);
+  const { seo } = content;
   return {
-    title: content.metaTitle,
-    description: content.metaDescription,
-    keywords: content.keywords,
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    keywords: seo.keywords,
     alternates: getAlternates(lang),
     openGraph: {
-      title: content.metaTitle,
-      description: content.metaDescription,
+      title: seo.metaTitle,
+      description: seo.metaDescription,
       url: `${SITE_URL}/${lang}`,
       siteName: "EconNews",
       type: "website",
-      locale: content.locale,
+      locale: seo.locale,
     },
     twitter: {
       card: "summary_large_image",
-      title: content.metaTitle,
-      description: content.metaDescription,
+      title: seo.metaTitle,
+      description: seo.metaDescription,
     },
   };
 }
@@ -52,11 +53,12 @@ export function generateMetadata({ params }: { params: { lang: LocaleKey } }): M
 export default function LocaleLanding({ params }: { params: { lang: LocaleKey } }) {
   const lang = SUPPORTED_LANGS.includes(params.lang) ? params.lang : ("en" as LocaleKey);
   const content = getLocaleContent(lang);
+  const { aeo, seo } = content;
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: content.faqs.map((faq) => ({
+    mainEntity: aeo.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -70,16 +72,16 @@ export default function LocaleLanding({ params }: { params: { lang: LocaleKey } 
     <main className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8">
       <section className="space-y-5 text-center">
         <p className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-blue-200">
-          {content.valuePropsTitle}
+          {aeo.valuePropsTitle}
         </p>
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{content.heroTitle}</h1>
-        <p className="mx-auto max-w-3xl text-lg text-slate-300">{content.heroSubtitle}</p>
+        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{aeo.heroTitle}</h1>
+        <p className="mx-auto max-w-3xl text-lg text-slate-300">{aeo.heroSubtitle}</p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
             className="focus-ring inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
             href="/"
           >
-            {content.ctaLabel}
+            {aeo.ctaLabel}
           </a>
           <a
             className="focus-ring inline-flex items-center justify-center rounded-2xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-blue-400 hover:text-white"
@@ -91,7 +93,7 @@ export default function LocaleLanding({ params }: { params: { lang: LocaleKey } 
       </section>
 
       <section className="grid gap-6 md:grid-cols-2">
-        {content.sections.map((section) => (
+        {aeo.sections.map((section) => (
           <article
             key={section.title}
             className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8 text-left text-slate-200 shadow-lg shadow-blue-900/20"
@@ -113,7 +115,7 @@ export default function LocaleLanding({ params }: { params: { lang: LocaleKey } 
       <section className="rounded-3xl border border-blue-500/20 bg-slate-900/80 p-10 text-left shadow-lg shadow-blue-900/40">
         <h2 className="mb-6 text-2xl font-bold text-white">FAQ</h2>
         <div className="space-y-6">
-          {content.faqs.map((faq) => (
+          {aeo.faqs.map((faq) => (
             <div key={faq.question} className="space-y-2">
               <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
               <p className="text-sm text-slate-300">{faq.answer}</p>

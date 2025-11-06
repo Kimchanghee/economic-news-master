@@ -29,7 +29,7 @@ export function generateOrganizationJsonLd(config: SEOConfig, locale: LocaleCont
     name: config.organizationName,
     url: config.baseUrl,
     logo: `${config.baseUrl}${config.organizationLogo}`,
-    description: locale.metaDescription,
+    description: locale.seo.metaDescription,
     sameAs: config.socialLinks,
     contactPoint: {
       "@type": "ContactPoint",
@@ -52,8 +52,8 @@ export function generateWebPageJsonLd(
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: locale.metaTitle,
-    description: locale.metaDescription,
+    name: locale.seo.metaTitle,
+    description: locale.seo.metaDescription,
     url: `${config.baseUrl}/${lang}${path}`,
     inLanguage: lang,
     isPartOf: {
@@ -75,7 +75,7 @@ export function generateFAQPageJsonLd(locale: LocaleContent): FAQPage {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: locale.faqs.map((faq) => ({
+    mainEntity: locale.aeo.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -118,26 +118,26 @@ export function generateSEOMetadata(
 
   return {
     // Basic SEO
-    title: locale.metaTitle,
-    description: locale.metaDescription,
-    keywords: locale.keywords,
+    title: locale.seo.metaTitle,
+    description: locale.seo.metaDescription,
+    keywords: locale.seo.keywords,
     canonical: canonicalUrl,
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     
     // Language and locale
-    locale: locale.locale,
+    locale: locale.seo.locale,
     alternateLocales: generateAlternateLocales(config, path),
     
     // Open Graph
     og: {
       type,
-      title: locale.metaTitle,
-      description: locale.metaDescription,
+      title: locale.seo.metaTitle,
+      description: locale.seo.metaDescription,
       url: canonicalUrl,
       image: imageUrl,
-      imageAlt: `${config.siteName} - ${locale.heroTitle}`,
+      imageAlt: `${config.siteName} - ${locale.aeo.heroTitle}`,
       siteName: config.siteName,
-      locale: locale.locale,
+      locale: locale.seo.locale,
     },
     
     // Twitter Card
@@ -145,10 +145,10 @@ export function generateSEOMetadata(
       card: "summary_large_image",
       site: config.twitterHandle,
       creator: config.twitterHandle,
-      title: locale.metaTitle,
-      description: locale.metaDescription,
+      title: locale.seo.metaTitle,
+      description: locale.seo.metaDescription,
       image: imageUrl,
-      imageAlt: `${config.siteName} - ${locale.heroTitle}`,
+      imageAlt: `${config.siteName} - ${locale.aeo.heroTitle}`,
     },
     
     // JSON-LD Structured Data
@@ -162,7 +162,7 @@ export function generateSEOMetadata(
     publishedTime: options?.publishedTime,
     modifiedTime: options?.modifiedTime,
     section: "Economic News",
-    tags: locale.keywords,
+    tags: locale.seo.keywords,
   };
 }
 

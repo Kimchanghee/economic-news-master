@@ -1,72 +1,67 @@
 import { LocaleContent } from "./types";
 
 const de: LocaleContent = {
-  metaTitle: "EconNews Wirtschaftsnews-Aggregator | Echtzeit Marktüberblick",
-  metaDescription:
-    "Verfolgen Sie Börse, Krypto, Makroökonomie, Technologie, Unternehmen und Devisen in Echtzeit. AEO- und SEO-optimierte Inhalte mit mehrsprachigen Zusammenfassungen.",
-  keywords: [
-    "Wirtschaftsnews",
-    "Finanznachrichten",
-    "Krypto News",
-    "Devisenmarkt",
-    "Finanz Dashboard",
-    "Answer Engine Optimization",
-  ],
-  locale: "de_DE",
-  heroTitle: "Ihr mehrsprachiger Hub für Wirtschafts-Insights",
-  heroSubtitle:
-    "Strukturierte Daten, KI-Zusammenfassungen und fünfzehn Sprachen machen EconNews zur ersten Anlaufstelle für Märkte und Suchmaschinen.",
-  ctaLabel: "Zum Live-Dashboard",
-  valuePropsTitle: "Darum überzeugt EconNews",
-  sections: [
-    {
-      title: "Optimiert für Answer Engines",
-      body:
-        "FAQ-Markup, prägnante Antworten und klare Keywords erhöhen die Sichtbarkeit in Sprachassistenten und Rich Results.",
-      bullets: [
-        "Sofortige Zusammenfassungen pro Artikel",
-        "Kategorie- und Sprach-Tags für präzise Treffer",
-        "JSON-LD-Struktur für Rich Snippets",
-      ],
-    },
-    {
-      title: "Fünfzehn Sprachen, ein konsistenter Blick",
-      body:
-        "Teilen Sie Analysen auf Deutsch, Englisch, Koreanisch, Japanisch, Chinesisch, Spanisch, Französisch und weiteren Schlüsselmärkten.",
-      bullets: [
-        "Einheitliches Datenmodell für länderübergreifende Vergleiche",
-        "Lokalisierte Call-to-Actions und Support-Kanäle",
-        "Geschäftsreife Reports für internationale Stakeholder",
-      ],
-    },
-    {
-      title: "Nahtlose Integration in Ihre Prozesse",
-      body:
-        "Mit Admin-Konsole, API und automatisierten Sammeljobs behalten Research-Teams jeden Schritt im Blick.",
-      bullets: [
-        "Planbare oder manuelle Ingestion",
-        "Engagementmetriken priorisieren relevante Inhalte",
-        "JSON-Export für Data Warehouses und BI",
-      ],
-    },
-  ],
-  faqs: [
-    {
-      question: "Wie häufig werden die Nachrichten aktualisiert?",
-      answer:
-        "Die Plattform liest führende RSS-Quellen kontinuierlich ein. Batch-Größe und Intervalle lassen sich an Ihren Bedarf anpassen.",
-    },
-    {
-      question: "Welche Kategorien deckt EconNews ab?",
-      answer:
-        "Aktien, Krypto, Wirtschaft, Technologie, Unternehmen und Devisen – jeweils mit passenden Filteroptionen.",
-    },
-    {
-      question: "Ist eine Integration in interne Systeme möglich?",
-      answer:
-        "Ja. Über authentifizierte FastAPI-Endpunkte stehen News, Engagementdaten und Sammel-Trigger zur Verfügung.",
-    },
-  ],
+  "seo": {
+    "metaTitle": "EconNews Globale Wirtschaftsnachrichten | Echtzeit-Marktinformationen in 20 Sprachen",
+    "metaDescription": "EconNews liefert lokalisierte Marktinformationen, strukturierte Daten und Antworten für die Sprachsuche in 20 Sprachen. Verfolgen Sie Schlagzeilen zu Aktien, Krypto, Makroökonomie, Technologie, Unternehmen und Devisen mit integriertem Hreflang und Schema.",
+    "keywords": [
+      "globale Wirtschaftsnachrichten",
+      "mehrsprachige Markteinblicke",
+      "Antworten zur Finanz-Sprachsuche",
+      "Internationales SEO-Dashboard",
+      "Antwort-Engine-Optimierung"
+    ],
+    "locale": "de_DE"
+  },
+  "aeo": {
+    "heroTitle": "Antwortmaschinenoptimierte Wirtschaftsnachrichten für globale Teams",
+    "heroSubtitle": "Kombinieren Sie kuratierte Feeds, für die Sprachsuche geeignete FAQs und strukturierte Metadaten, um in 20 Regionen ausgewählte Antworten zu erhalten.",
+    "ctaLabel": "Öffnen Sie das Live-Markt-Dashboard",
+    "valuePropsTitle": "Warum EconNews gewinnt, vorgestellte Antworten",
+    "sections": [
+      {
+        "title": "Sprach- und Antwort-Engine-Optimierung durch Design",
+        "body": "Jede Story wird mit Gesprächszusammenfassungen, FAQ-Schema und JSON-LD-Blöcken geliefert, sodass Antwortmaschinen, Sprachassistenten und KI-Übersichten Ihre Briefings zuerst hervorheben.",
+        "bullets": [
+          "Konversationsorientierte, auf die Absicht abgestimmte Zusammenfassungen, die für Sprachergebnisse entwickelt wurden",
+          "Entitäts-, Sektor- und Sentiment-Tagging im Einklang mit schema.org",
+          "Automatisiertes FAQ- und HowTo-Markup zur Erfassung hervorgehobener Snippets"
+        ]
+      },
+      {
+        "title": "Lokalisierte Intelligenz in 20 Sprachen",
+        "body": "Lokalisierte Schlagzeilen, Hreflang-Mapping und Keyword-Recherche halten grenzüberschreitende Stakeholder auf dem Laufenden, ohne die Nuancen zu verlieren.",
+        "bullets": [
+          "Kulturell relevante Schlüsselwörter und CTAs pro Gebietsschema",
+          "Konsistente Taxonomie zum Vergleich von Märkten weltweit",
+          "Regionsspezifischer Support und Compliance-Nachrichten"
+        ]
+      },
+      {
+        "title": "Workflow-Automatisierung und Governance",
+        "body": "Integrieren Sie EconNews mit authentifizierten APIs, Administratorgenehmigungen und transparenten Aufnahmeprotokollen in Ihren Stack.",
+        "bullets": [
+          "Planen oder lösen Sie Sammlungen mit Steuerelementen auf Rubrikebene aus",
+          "Engagement-Kennzahlen bringen Geschichten zum Vorschein, die es wert sind, hervorgehoben zu werden",
+          "JSON-Exporte lassen sich in BI- und Risiko-Dashboards integrieren"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wie optimiert EconNews Finanzberichte für Antwortmaschinen?",
+        "answer": "Wir strukturieren jedes Update mit Konversationssprache, schema.org-Markup und lokalisierten Schlüsselwörtern, damit Sprachassistenten und KI-Zusammenfassungen in Sekundenschnelle die richtige Antwort liefern."
+      },
+      {
+        "question": "Welche Märkte und Anlageklassen überwacht EconNews täglich?",
+        "answer": "Verfolgen Sie Aktien, Krypto, makroökonomische Indikatoren, Technologie, Unternehmensentwicklungen und Devisen mit Filtern für jede Region."
+      },
+      {
+        "question": "Kann EconNews in unsere bestehenden Recherche- oder Newsroom-Tools integriert werden?",
+        "answer": "Ja. Mit sicheren FastAPI-Endpunkten können Sie Nachrichten, Engagement-Signale und Automatisierungsauslöser direkt in Ihren Workflow abrufen."
+      }
+    ]
+  }
 };
 
 export default de;
