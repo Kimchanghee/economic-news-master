@@ -1,16 +1,57 @@
 # Cloud Build 설정 가이드
 
+## ⚠️ 중요: Dockerfile 오류 해결
+
+**오류 메시지**: `unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /workspace/Dockerfile: no such file or directory`
+
+**원인**: Cloud Build 트리거가 Dockerfile 모드로 설정되어 있어 `cloudbuild.yaml`을 사용하지 않음
+
+**해결 방법**: 아래 "1. Cloud Build 트리거 설정 확인" 섹션 참조
+
+---
+
 ## 문제 해결: 브랜치 패턴 불일치 오류
 
 Cloud Build 트리거가 "구성된 브랜치 패턴과 일치하는 브랜치를 찾을 수 없습니다" 오류를 발생시키는 경우, 다음 단계를 따르세요.
 
-## 1. Cloud Build 트리거 설정 확인
+## 1. Cloud Build 트리거 설정 확인 ⭐ 가장 중요!
 
-Google Cloud Console에서 트리거 설정을 확인하세요:
+Google Cloud Console에서 트리거 설정을 확인하고 수정하세요:
 
-1. [Cloud Build 트리거 페이지](https://console.cloud.google.com/cloud-build/triggers)로 이동
-2. 해당 트리거를 선택하고 **편집** 클릭
-3. **소스** 섹션에서 브랜치 패턴 확인
+### 단계별 가이드:
+
+1. **[Cloud Build 트리거 페이지](https://console.cloud.google.com/cloud-build/triggers)로 이동**
+
+2. **트리거 선택 및 편집**
+   - 해당 트리거 찾기 (저장소 이름으로 검색)
+   - 트리거 오른쪽의 **⋮ (점 3개)** 클릭 → **편집** 선택
+
+3. **Configuration (구성) 섹션 수정** ← 가장 중요!
+   
+   아래로 스크롤하여 **Configuration** 섹션을 찾으세요.
+   
+   **현재 설정 (문제 발생):**
+   ```
+   Type: Autodetected 또는 Dockerfile
+   ```
+   
+   **변경할 설정 (올바른 설정):**
+   ```
+   Type: Cloud Build configuration file (yaml or json)
+   Location: Repository
+   Cloud Build configuration file location: cloudbuild.yaml
+   ```
+   
+   드롭다운 메뉴에서 **"Cloud Build configuration file (yaml or json)"**을 선택하세요!
+
+4. **Source (소스) 섹션에서 브랜치 패턴 확인**
+   - 브랜치: `^main$` 또는 `^master$` 또는 `^(main|master)$`
+
+5. **저장 버튼 클릭**
+
+6. **테스트**
+   - 트리거 오른쪽의 **RUN** 버튼으로 수동 실행
+   - 또는 Git 커밋/푸시로 자동 실행
 
 ## 2. 브랜치 패턴 수정
 
