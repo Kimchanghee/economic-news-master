@@ -1,4 +1,4 @@
-import { CATEGORIES } from "@/app/constants/categories";
+import { CATEGORIES } from "@/ui/constants/categories";
 
 export function Footer() {
   return (

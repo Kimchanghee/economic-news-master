@@ -1,5 +1,5 @@
-import { LANG_LABELS } from "@/app/constants/languages";
-import { AdminBadge } from "./AdminBadge";
+import { LANG_LABELS } from "@/ui/constants/languages";
+import { AdminBadge } from "@/ui/components/admin/AdminBadge";
 
 type PageSectionProps = {
   language: string;

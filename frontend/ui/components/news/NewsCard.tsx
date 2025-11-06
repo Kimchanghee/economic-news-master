@@ -1,6 +1,6 @@
 import { Newspaper } from "lucide-react";
-import { CATEGORIES } from "@/app/constants/categories";
-import type { NewsItem } from "@/app/types/news";
+import { CATEGORIES } from "@/ui/constants/categories";
+import type { NewsItem } from "@/ui/types/news";
 
 type NewsCardProps = {
   item: NewsItem;
