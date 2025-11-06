@@ -14,13 +14,13 @@
     "date-fns": "3.2.0",
     "lucide-react": "0.308.0",
     "next": "14.1.0",
-    "react": "18.2.0",
+    "react": "19.2.0",
     "react-dom": "18.2.0",
     "swr": "2.2.0"
   },
   "devDependencies": {
     "@types/node": "20.11.16",
-    "@types/react": "18.2.45",
+    "@types/react": "19.2.2",
     "@types/react-dom": "18.2.17",
     "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
