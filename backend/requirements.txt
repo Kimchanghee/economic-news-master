@@ -8,3 +8,4 @@ feedparser==6.0.10
 aiohttp==3.9.1
 PyJWT==2.9.0
 httpx==0.25.2
+email-validator==2.1.0.post1
