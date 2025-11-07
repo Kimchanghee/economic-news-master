@@ -1,6 +1,6 @@
 import { SEOMetadata, SEOConfig, Organization, WebPage, FAQPage } from "@/ui/types/seo";
-import { LocaleContent } from "@/app/[lang]/locales/types";
-import { SUPPORTED_LANGS } from "@/app/[lang]/locales";
+import { LocaleContent } from "@/[lang]/locales/types";
+import { SUPPORTED_LANGS } from "@/[lang]/locales";
 
 /**
  * Default SEO configuration
