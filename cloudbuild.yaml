@@ -132,7 +132,7 @@ steps:
       - '--cpu-boost'
       - '--no-cpu-throttling'
       - '--set-env-vars'
-      - 'PORT=8000,ENVIRONMENT=production'
+      - 'ENVIRONMENT=production'
     waitFor: ['push-backend']
 
 # Store images in Container Registry
