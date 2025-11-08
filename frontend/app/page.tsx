@@ -40,26 +40,48 @@ export default function HomePage() {
               onChange={setActiveCategory}
               language={language as "en" | "ko" | "ja"}
             />
-            <AdSlot slotId="leaderboard-1" format="horizontal" label="헤드라인 스폰서" />
+            <AdSlot
+              slotId="leaderboard-1"
+              format="horizontal"
+              label={language === "en" ? "Headline Sponsor" : language === "ja" ? "ヘッドラインスポンサー" : "헤드라인 스폰서"}
+            />
 
             {isLoading && <LoadingSpinner />}
 
             {!isLoading && data?.items && data.items.length > 0 && (
-              <NewsGrid items={data.items} onLike={handleLike} onView={handleView} />
+              <NewsGrid
+                items={data.items}
+                onLike={handleLike}
+                onView={handleView}
+                language={language as "en" | "ko" | "ja"}
+              />
             )}
 
             {!isLoading && data?.items?.length === 0 && <EmptyNewsMessage />}
           </div>
           <div className="space-y-6">
-            <AdSlot slotId="rail-market-watch" format="rail" label="Market Watch" />
-            <AdSlot slotId="rail-investor-note" format="rail" label="Investor Note" />
+            <AdSlot
+              slotId="rail-market-watch"
+              format="rail"
+              label={language === "en" ? "Market Watch" : language === "ja" ? "マーケットウォッチ" : "시장 동향"}
+            />
+            <AdSlot
+              slotId="rail-investor-note"
+              format="rail"
+              label={language === "en" ? "Investor Note" : language === "ja" ? "投資家ノート" : "투자자 노트"}
+            />
           </div>
         </div>
       </PageSection>
 
-        <AdSlot slotId="bottom-anchor" format="horizontal" label="Global Partner" className="self-center w-full max-w-4xl" />
+        <AdSlot
+          slotId="bottom-anchor"
+          format="horizontal"
+          label={language === "en" ? "Global Partner" : language === "ja" ? "グローバルパートナー" : "글로벌 파트너"}
+          className="self-center w-full max-w-4xl"
+        />
 
-        <Footer />
+        <Footer language={language as "en" | "ko" | "ja"} />
       </div>
     </main>
   );

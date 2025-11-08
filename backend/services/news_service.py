@@ -92,6 +92,12 @@ class NewsItem:
     source: str
     published_at: datetime
     language: str = DEFAULT_LANGUAGE
+    title_en: Optional[str] = None
+    title_ko: Optional[str] = None
+    title_ja: Optional[str] = None
+    summary_en: Optional[str] = None
+    summary_ko: Optional[str] = None
+    summary_ja: Optional[str] = None
     image_url: Optional[str] = None
     views: int = 0
     likes: int = 0
@@ -119,6 +125,12 @@ class NewsItem:
             source=payload.get("source", ""),
             published_at=published_at,
             language=payload.get("language", DEFAULT_LANGUAGE),
+            title_en=payload.get("title_en"),
+            title_ko=payload.get("title_ko"),
+            title_ja=payload.get("title_ja"),
+            summary_en=payload.get("summary_en"),
+            summary_ko=payload.get("summary_ko"),
+            summary_ja=payload.get("summary_ja"),
             image_url=payload.get("image_url"),
             views=int(payload.get("views", 0)),
             likes=int(payload.get("likes", 0)),
@@ -351,6 +363,91 @@ class NewsSummarizer:
             logger.error("Summarization failed: %s", exc)
             return clean_desc[:320]
 
+    async def summarize_multilingual(self, title: str, description: str) -> Dict[str, str]:
+        """
+        Summarize news in English, Korean, and Japanese simultaneously.
+        Returns dict with 'en', 'ko', 'ja' keys.
+        """
+        clean_desc = (description or "").strip()
+        if not clean_desc:
+            return {"en": title, "ko": title, "ja": title}
+
+        if not self._enabled or not self._model:
+            return {
+                "en": clean_desc[:320],
+                "ko": clean_desc[:320],
+                "ja": clean_desc[:320],
+            }
+
+        prompt = f"""
+Please summarize the following economic news article in THREE languages (English, Korean, and Japanese).
+For each language, provide a concise 2-sentence summary focusing on the key economic impact.
+
+Title: {title}
+Content: {clean_desc}
+
+Please format your response EXACTLY as follows:
+EN: [English summary here]
+KO: [한국어 요약]
+JA: [日本語の要約]
+"""
+
+        try:  # pragma: no cover - depends on external API
+            response = await asyncio.to_thread(self._model.generate_content, prompt)
+            text = response.text.strip()
+
+            # Parse the response
+            summaries = {"en": "", "ko": "", "ja": ""}
+            lines = text.split('\n')
+            current_lang = None
+            current_text = []
+
+            for line in lines:
+                line = line.strip()
+                if line.startswith("EN:"):
+                    if current_lang and current_text:
+                        summaries[current_lang] = ' '.join(current_text).strip()
+                    current_lang = "en"
+                    current_text = [line[3:].strip()]
+                elif line.startswith("KO:"):
+                    if current_lang and current_text:
+                        summaries[current_lang] = ' '.join(current_text).strip()
+                    current_lang = "ko"
+                    current_text = [line[3:].strip()]
+                elif line.startswith("JA:"):
+                    if current_lang and current_text:
+                        summaries[current_lang] = ' '.join(current_text).strip()
+                    current_lang = "ja"
+                    current_text = [line[3:].strip()]
+                elif current_lang and line:
+                    current_text.append(line)
+
+            # Add the last language
+            if current_lang and current_text:
+                summaries[current_lang] = ' '.join(current_text).strip()
+
+            # Fallback if parsing failed
+            if not summaries["en"] or not summaries["ko"] or not summaries["ja"]:
+                summaries = {
+                    "en": clean_desc[:320],
+                    "ko": clean_desc[:320],
+                    "ja": clean_desc[:320],
+                }
+
+            # Limit length
+            for lang in summaries:
+                summaries[lang] = summaries[lang][:400]
+
+            return summaries
+
+        except Exception as exc:
+            logger.error("Multilingual summarization failed: %s", exc)
+            return {
+                "en": clean_desc[:320],
+                "ko": clean_desc[:320],
+                "ja": clean_desc[:320],
+            }
+
 
 class NewsCollector:
     def __init__(self, summarizer: Optional[NewsSummarizer] = None) -> None:
@@ -381,7 +478,13 @@ class NewsCollector:
                 published = self._resolve_datetime(entry)
                 image = self._extract_image(entry)
                 news_id = str(uuid.uuid5(uuid.NAMESPACE_URL, link or title))
-                condensed = await self.summarizer.summarize(title, summary)
+
+                # Generate multilingual summaries
+                multilingual_summaries = await self.summarizer.summarize_multilingual(title, summary)
+
+                # Use the default language's summary as the main summary
+                condensed = multilingual_summaries.get(language, summary[:320])
+
                 items.append(
                     NewsItem(
                         id=news_id,
@@ -392,6 +495,12 @@ class NewsCollector:
                         source=source,
                         published_at=published,
                         language=language,
+                        title_en=title,  # Keep original title for all languages
+                        title_ko=title,
+                        title_ja=title,
+                        summary_en=multilingual_summaries.get("en", summary[:320]),
+                        summary_ko=multilingual_summaries.get("ko", summary[:320]),
+                        summary_ja=multilingual_summaries.get("ja", summary[:320]),
                         image_url=image,
                     )
                 )
