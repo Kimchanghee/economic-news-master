@@ -28,6 +28,15 @@ const config: Config = {
         "hero-gradient": "radial-gradient(circle at top, rgba(37, 99, 235, 0.4), transparent 55%)",
         "card-gradient": "linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95))",
       },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        scroll: "scroll 40s linear infinite",
+      },
     },
   },
   plugins: [],

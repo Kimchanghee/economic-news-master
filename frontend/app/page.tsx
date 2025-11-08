@@ -11,6 +11,7 @@ import { Footer } from "@/components/ui/Footer";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 import { NewsGrid } from "@/components/ui/NewsGrid";
 import { PageSection } from "@/components/ui/PageSection";
+import { BreakingNewsBar } from "@/ui/components/economic/BreakingNewsBar";
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -20,13 +21,25 @@ export default function HomePage() {
   const { handleLike, handleView } = useNewsActions(mutate);
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-12 px-4 pb-16 pt-8 sm:px-6 lg:px-10">
-      <Header language={language} setLanguage={setLanguage} />
+    <main className="mx-auto flex min-h-screen w-full max-w-full flex-col gap-0 pb-16">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 lg:px-10">
+        <Header language={language} setLanguage={setLanguage} />
+      </div>
+
+      <div className="my-8">
+        <BreakingNewsBar language={language as "en" | "ko" | "ja"} />
+      </div>
+
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-10 flex flex-col gap-12">
 
       <PageSection language={language}>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,2.3fr)_minmax(260px,1fr)]">
           <div className="space-y-6">
-            <CategoryFilter active={activeCategory} onChange={setActiveCategory} />
+            <CategoryFilter
+              active={activeCategory}
+              onChange={setActiveCategory}
+              language={language as "en" | "ko" | "ja"}
+            />
             <AdSlot slotId="leaderboard-1" format="horizontal" label="헤드라인 스폰서" />
 
             {isLoading && <LoadingSpinner />}
@@ -44,9 +57,10 @@ export default function HomePage() {
         </div>
       </PageSection>
 
-      <AdSlot slotId="bottom-anchor" format="horizontal" label="Global Partner" className="self-center w-full max-w-4xl" />
+        <AdSlot slotId="bottom-anchor" format="horizontal" label="Global Partner" className="self-center w-full max-w-4xl" />
 
-      <Footer />
+        <Footer />
+      </div>
     </main>
   );
 }

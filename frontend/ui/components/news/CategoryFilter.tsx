@@ -4,9 +4,16 @@ import { CATEGORIES } from "@/ui/constants/categories";
 type CategoryFilterProps = {
   active: string;
   onChange: (value: string) => void;
+  language?: "en" | "ko" | "ja";
 };
 
-export function CategoryFilter({ active, onChange }: CategoryFilterProps) {
+export function CategoryFilter({ active, onChange, language = "ko" }: CategoryFilterProps) {
+  const getCategoryLabel = (category: typeof CATEGORIES[0]) => {
+    if (language === "en") return category.labelEn;
+    if (language === "ja") return category.labelJa;
+    return category.labelKo;
+  };
+
   return (
     <div className="flex flex-wrap gap-3">
       {CATEGORIES.map((category) => {
@@ -23,7 +30,7 @@ export function CategoryFilter({ active, onChange }: CategoryFilterProps) {
             )}
           >
             <span>{category.icon}</span>
-            {category.label}
+            {getCategoryLabel(category)}
           </button>
         );
       })}

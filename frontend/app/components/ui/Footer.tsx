@@ -10,8 +10,7 @@ export function Footer() {
             <span className="font-semibold">EconNews</span>
           </div>
           <p>
-            EconNews는 글로벌 경제 뉴스를 실시간으로 편집해 제공하는 디지털 뉴스룸입니다. 시장, 통화, 정책, 기술까지 필요한
-            지면을 한 번에 확인하세요.
+            아시아 경제 뉴스를 실시간으로 제공하는 디지털 뉴스룸입니다. 아시아 주요 국가의 시장, 통화, 정책, 기술 뉴스를 한 번에 확인하세요.
           </p>
         </div>
         <div>
@@ -28,6 +27,12 @@ export function Footer() {
         <div className="space-y-3">
           <h4 className="text-base font-semibold text-slate-900 dark:text-white">정보</h4>
           <ul className="space-y-2">
+            <li>
+              <a href="/api-docs" className="hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-2">
+                <span>📡</span>
+                <span>API 문서</span>
+              </a>
+            </li>
             <li>이용 약관</li>
             <li>개인정보 처리방침</li>
             <li>고객센터 · support@econnews.dev</li>
