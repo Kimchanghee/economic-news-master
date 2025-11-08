@@ -26,14 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'hourly',
     priority: 1.0,
-    alternates: {
-      languages: LANGUAGES.reduce((acc, l) => {
-        if (l !== lang) {
-          acc[l] = `${BASE_URL}/${l}`
-        }
-        return acc
-      }, {} as Record<string, string>)
-    }
   }))
 
   // Category pages for each language
@@ -46,14 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
           lastModified: now,
           changeFrequency: 'hourly',
           priority: 0.9,
-          alternates: {
-            languages: LANGUAGES.reduce((acc, l) => {
-              if (l !== lang) {
-                acc[l] = `${BASE_URL}/${l}?category=${category}`
-              }
-              return acc
-            }, {} as Record<string, string>)
-          }
         })
       }
     }
