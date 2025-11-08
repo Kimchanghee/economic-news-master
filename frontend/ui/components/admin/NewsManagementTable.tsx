@@ -17,27 +17,31 @@ type NewsManagementTableProps = {
 
 export function NewsManagementTable({ items, onDelete }: NewsManagementTableProps) {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow">
+    <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/70">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-gray-800">뉴스 목록</h3>
-        <span className="text-sm text-gray-500">총 {items.length}건</span>
+        <div>
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">기사 목록</h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400">총 {items.length}건</p>
+        </div>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 text-sm">
-          <thead className="bg-gray-50 text-xs uppercase tracking-wide text-gray-500">
+        <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
+          <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-slate-800/60 dark:text-slate-400">
             <tr>
               <th className="px-4 py-3 text-left">제목</th>
               <th className="px-4 py-3 text-left">출처</th>
               <th className="px-4 py-3 text-left">카테고리</th>
-              <th className="px-4 py-3 text-left">조회수</th>
+              <th className="px-4 py-3 text-left">조회</th>
               <th className="px-4 py-3 text-left">좋아요</th>
-              <th className="px-4 py-3 text-right">액션</th>
+              <th className="px-4 py-3 text-right">작업</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
             {items.map((item) => (
-              <tr key={item.id} className="text-gray-600">
-                <td className="max-w-[280px] truncate px-4 py-3 font-medium text-gray-900">{item.title}</td>
+              <tr key={item.id} className="text-slate-600 dark:text-slate-200">
+                <td className="max-w-[280px] truncate px-4 py-3 font-medium text-slate-900 dark:text-white">
+                  {item.title}
+                </td>
                 <td className="px-4 py-3">{item.source}</td>
                 <td className="px-4 py-3 uppercase">{item.category}</td>
                 <td className="px-4 py-3">{item.views}</td>
@@ -45,7 +49,7 @@ export function NewsManagementTable({ items, onDelete }: NewsManagementTableProp
                 <td className="px-4 py-3 text-right">
                   <button
                     onClick={() => onDelete(item.id)}
-                    className="inline-flex items-center gap-1 rounded-lg bg-red-100 px-3 py-2 text-xs font-semibold text-red-600 hover:bg-red-200"
+                    className="inline-flex items-center gap-1 rounded-full border border-red-200/80 px-3 py-2 text-xs font-semibold text-red-600 transition hover:bg-red-50 dark:border-red-500/50 dark:text-red-200 dark:hover:bg-red-500/10"
                   >
                     <Trash2 size={14} />
                     삭제
@@ -55,8 +59,8 @@ export function NewsManagementTable({ items, onDelete }: NewsManagementTableProp
             ))}
             {items.length === 0 && (
               <tr>
-                <td colSpan={6} className="px-4 py-6 text-center text-gray-400">
-                  표시할 뉴스가 없습니다.
+                <td colSpan={6} className="px-4 py-6 text-center text-slate-400">
+                  표시할 기사가 없습니다.
                 </td>
               </tr>
             )}
@@ -66,4 +70,3 @@ export function NewsManagementTable({ items, onDelete }: NewsManagementTableProp
     </div>
   );
 }
-

@@ -29,40 +29,43 @@ type DashboardTabProps = {
 export function DashboardTab({ dashboard, onCollect }: DashboardTabProps) {
   const stats = dashboard?.stats;
   const logs = dashboard?.recent_logs ?? [];
-  
+
   return (
     <div className="space-y-8">
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
-          title="전체 뉴스"
+          title="전체 기사"
           value={stats?.total ?? 0}
           icon={<Newspaper className="text-blue-600" size={20} />}
-          accent="bg-blue-100"
+          tone="blue"
         />
         <StatCard
-          title="오늘 수집"
+          title="금일 수집량"
           value={logs[0]?.total_collected ?? 0}
-          icon={<BarChart3 className="text-green-600" size={20} />}
-          accent="bg-green-100"
+          icon={<BarChart3 className="text-emerald-600" size={20} />}
+          tone="green"
         />
         <StatCard
-          title="카테고리 수"
+          title="카테고리"
           value={stats ? Object.keys(stats.categories ?? {}).length : 0}
           icon={<Globe2 className="text-purple-600" size={20} />}
-          accent="bg-purple-100"
+          tone="purple"
         />
         <StatCard
           title="상태"
-          value="✅ 활성"
-          icon={<ShieldCheck className="text-green-600" size={20} />}
-          accent="bg-green-100"
+          value="정상 운영"
+          icon={<ShieldCheck className="text-emerald-600" size={20} />}
+          tone="green"
         />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-5">
-        <div className="rounded-2xl bg-white p-6 shadow lg:col-span-3">
+        <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/70 lg:col-span-3">
           <div className="mb-4 flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-gray-800">카테고리 분포</h3>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">카테고리 분포</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">최근 수집된 기사 기준</p>
+            </div>
           </div>
           <CategoryDistribution categories={stats?.categories ?? {}} />
         </div>
@@ -73,4 +76,3 @@ export function DashboardTab({ dashboard, onCollect }: DashboardTabProps) {
     </div>
   );
 }
-

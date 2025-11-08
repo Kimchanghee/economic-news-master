@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/ui/providers/ThemeProvider";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://econnews.example.com";
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -123,6 +124,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
+        {ADSENSE_CLIENT && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

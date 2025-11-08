@@ -4,16 +4,15 @@ type CollectButtonProps = {
 
 export function CollectButton({ onCollect }: CollectButtonProps) {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow lg:col-span-2">
-      <h3 className="mb-4 text-lg font-semibold text-gray-800">수집 관리</h3>
-      <p className="mb-4 text-sm text-gray-500">최신 뉴스를 즉시 수집하고 대시보드를 업데이트합니다.</p>
+    <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-br from-blue-600/10 via-slate-100 to-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:from-blue-500/10 dark:via-transparent lg:col-span-2">
+      <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">수집 제어</h3>
+      <p className="mb-5 text-sm text-slate-500 dark:text-slate-300">최신 헤드라인을 즉시 갱신하고 로그를 확인하세요.</p>
       <button
         onClick={onCollect}
-        className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
+        className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
       >
-        지금 수집하기
+        지면 업데이트 실행
       </button>
     </div>
   );
 }
-
