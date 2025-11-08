@@ -1,57 +1,79 @@
-import type { MetadataRoute } from "next";
+/**
+ * Sitemap generator for Next.js
+ * 다국어 지원 및 동적 콘텐츠 포함
+ */
 
-import { SUPPORTED_LANGS } from "./[lang]/locales";
+import { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://econnews.example.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://economic-news.com'
+
+const LANGUAGES = [
+  'en', 'ko', 'ja', 'zh', 'es', 'fr', 'de', 'it', 'pt', 'ru',
+  'ar', 'hi', 'id', 'vi', 'th', 'nl', 'sv', 'pl', 'tr', 'el'
+]
+
+const CATEGORIES = [
+  'all', 'business', 'finance', 'technology', 
+  'crypto', 'markets', 'economy', 'global'
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  // Main pages
-  const pages: MetadataRoute.Sitemap = [
-    {
-      url: SITE_URL,
-      lastModified: now,
-      changeFrequency: "hourly",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/news`,
-      lastModified: now,
-      changeFrequency: "hourly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/admin`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.4,
-    },
-  ];
-
-  // Localized landing pages
-  const localizedPages = SUPPORTED_LANGS.map<MetadataRoute.Sitemap[number]>((lang) => ({
-    url: `${SITE_URL}/${lang}`,
+  const now = new Date()
+  
+  // Main pages for each language
+  const languagePages: MetadataRoute.Sitemap = LANGUAGES.map((lang) => ({
+    url: `${BASE_URL}/${lang}`,
     lastModified: now,
-    changeFrequency: "daily",
-    priority: 0.8,
+    changeFrequency: 'hourly',
+    priority: 1.0,
     alternates: {
-      languages: Object.fromEntries(
-        SUPPORTED_LANGS.map((l) => [l, `${SITE_URL}/${l}`])
-      ),
+      languages: LANGUAGES.reduce((acc, l) => {
+        if (l !== lang) {
+          acc[l] = `${BASE_URL}/${l}`
+        }
+        return acc
+      }, {} as Record<string, string>)
+    }
+  }))
+
+  // Category pages for each language
+  const categoryPages: MetadataRoute.Sitemap = []
+  for (const lang of LANGUAGES) {
+    for (const category of CATEGORIES) {
+      if (category !== 'all') {
+        categoryPages.push({
+          url: `${BASE_URL}/${lang}?category=${category}`,
+          lastModified: now,
+          changeFrequency: 'hourly',
+          priority: 0.9,
+          alternates: {
+            languages: LANGUAGES.reduce((acc, l) => {
+              if (l !== lang) {
+                acc[l] = `${BASE_URL}/${l}?category=${category}`
+              }
+              return acc
+            }, {} as Record<string, string>)
+          }
+        })
+      }
+    }
+  }
+
+  // Static pages
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/`,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 1.0,
     },
-  }));
+    {
+      url: `${BASE_URL}/admin`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+  ]
 
-  // TODO: Add dynamic news article URLs
-  // When implementing, fetch actual news articles from your API/database
-  // Example:
-  // const newsArticles = await fetchNewsArticles();
-  // const newsPages = newsArticles.map(article => ({
-  //   url: `${SITE_URL}/news/${article.id}`,
-  //   lastModified: new Date(article.updatedAt),
-  //   changeFrequency: 'daily',
-  //   priority: 0.7,
-  // }));
-
-  return [...pages, ...localizedPages];
+  return [...staticPages, ...languagePages, ...categoryPages]
 }

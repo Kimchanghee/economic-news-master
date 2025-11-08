@@ -1,52 +1,33 @@
-import type { MetadataRoute } from "next";
+/**
+ * robots.txt generator for Next.js
+ * SEO 크롤링 최적화
+ */
 
-import { SUPPORTED_LANGS } from "./[lang]/locales";
+import { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://econnews.example.com";
-
-const ALLOW_PATHS = [
-  "/",
-  "/news",
-  "/news/",
-  ...SUPPORTED_LANGS.map((lang) => `/${lang}`),
-  ...SUPPORTED_LANGS.map((lang) => `/${lang}/`),
-];
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://economic-news.com'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Rules for all search engines and AI crawlers
       {
-        userAgent: "*",
-        allow: ALLOW_PATHS,
-        disallow: ["/admin", "/admin/", "/api/"],
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/admin'],
       },
-      // Specific rules for OpenAI GPTBot (ChatGPT)
       {
-        userAgent: "GPTBot",
-        allow: ["/", "/news", ...SUPPORTED_LANGS.map((lang) => `/${lang}`)],
-        disallow: ["/admin"],
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/admin'],
+        crawlDelay: 0,
       },
-      // Specific rules for Google's AI (Gemini)
       {
-        userAgent: "Google-Extended",
-        allow: ["/", "/news", ...SUPPORTED_LANGS.map((lang) => `/${lang}`)],
-        disallow: ["/admin"],
-      },
-      // Anthropic Claude Bot
-      {
-        userAgent: "anthropic-ai",
-        allow: ["/", "/news", ...SUPPORTED_LANGS.map((lang) => `/${lang}`)],
-        disallow: ["/admin"],
-      },
-      // Common AI/LLM crawlers
-      {
-        userAgent: "CCBot",
-        allow: ["/", "/news", ...SUPPORTED_LANGS.map((lang) => `/${lang}`)],
-        disallow: ["/admin"],
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: ['/api/', '/admin'],
+        crawlDelay: 0,
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
-  };
+    sitemap: [`${BASE_URL}/sitemap.xml`, `${BASE_URL}/sitemap-news.xml`],
+  }
 }
