@@ -16,10 +16,10 @@ export function CategoryFilter({ active, onChange }: CategoryFilterProps) {
             key={category.id}
             onClick={() => onChange(category.id)}
             className={clsx(
-              "focus-ring inline-flex min-w-[90px] items-center justify-center gap-2 rounded-full px-4 py-2 text-sm transition",
+              "focus-ring inline-flex min-w-[100px] items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition",
               isActive
-                ? "bg-gradient-to-r from-blue-600 to-purple-500 text-white shadow"
-                : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/70"
+                ? "border-blue-600 bg-blue-600 text-white shadow"
+                : "border-slate-200/80 bg-white text-slate-600 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:border-blue-500/60"
             )}
           >
             <span>{category.icon}</span>
@@ -30,4 +30,3 @@ export function CategoryFilter({ active, onChange }: CategoryFilterProps) {
     </div>
   );
 }
-

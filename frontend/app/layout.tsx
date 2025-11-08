@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/ui/providers/ThemeProvider";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://econnews.example.com";
 
@@ -120,7 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="ko" className="dark">
+    <html lang="ko">
       <head>
         <script
           type="application/ld+json"
@@ -131,10 +132,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className="min-h-screen bg-slate-950 text-white antialiased">
-        <div className="relative min-h-screen bg-hero-gradient">
-          {children}
-        </div>
+      <body className="min-h-screen bg-[var(--news-background)] text-[var(--news-foreground)] antialiased transition-colors">
+        <ThemeProvider>
+          <div className="relative min-h-screen bg-grid-light dark:bg-grid-dark">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

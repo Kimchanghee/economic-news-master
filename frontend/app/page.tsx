@@ -19,7 +19,7 @@ export default function HomePage() {
   const { handleLike, handleView } = useNewsActions(mutate);
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-7xl flex-col gap-12 px-4 pb-16 pt-8 sm:px-6 lg:px-10">
+    <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-12 px-4 pb-16 pt-8 sm:px-6 lg:px-10">
       <Header language={language} setLanguage={setLanguage} />
 
       <PageSection language={language}>
